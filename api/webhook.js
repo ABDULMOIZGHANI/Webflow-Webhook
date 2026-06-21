@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     // STEP 1: Parse the form fields from Webflow
     // Webflow sends form data as: { data: { "field-name": "value" } }
     // ─────────────────────────────────────────────
-    const formData = body.data || body;
+    const formData = body.payload?.data || body.data || body;
 
     const name = formData["name"] || formData["Name"] || "";
     const email = formData["email"] || formData["Email"] || "";
