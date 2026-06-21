@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/webhook.js": {
-      "runtime": "nodejs24.x",
-      "memory": 128,
-      "maxDuration": 10
-    }
-  },
   "headers": [
     {
       "source": "/api/(.*)",
