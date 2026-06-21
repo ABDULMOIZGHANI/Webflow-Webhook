@@ -74,16 +74,11 @@ async function createWebflowCMSItem({ name, email, phone, message, service }) {
     isArchived: false,
     isDraft: false,
     fieldData: {
-      name: name,                          // Required by Webflow (item name/slug)
-      slug: generateSlug(name + "-" + Date.now()),
-      "lead-name": name,
-      "lead-email": email,
-      "lead-phone": phone || "N/A",
-      "lead-message": message || "",
-      "lead-service": service || "General Inquiry",
-      "submitted-at": new Date().toISOString(),
-      "status": "New",
-    },
+  name: name,
+  slug: generateSlug(name + "-" + Date.now()),
+  "lead-name": name,
+  "lead-email": email,
+},
   };
 
   const response = await fetch(url, {
